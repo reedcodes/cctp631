@@ -1,3 +1,11 @@
+$breakpoints: (
+  xs: 500px,
+  sm: 768px,
+  md: 1024px,
+  lg: 1200px ) !default;
+
+@import './node_modules/include-media/dist/include-media';
+
 @import './node_modules/@fortawesome/fontawesome-free/scss/fontawesome';
 @import './node_modules/@fortawesome/fontawesome-free/scss/brands';
 @import './node_modules/@fortawesome/fontawesome-free/scss/solid';
@@ -36,25 +44,41 @@ body {
 header {
   display: grid;
   grid-template-columns:
-    minmax(2vw, 1fr)
-    minmax(160px, 480px)
-    minmax(160px, 480px)
-    minmax(2vw, 1fr);
+      minmax(2vw, 1fr)
+      minmax(320px, 960px)
+      minmax(2vw, 1fr);
   align-items: center;
   background-color: $accent;
   border-bottom: 5px solid $bold;
 
-  h1 {
-    grid-column: 3/4;
-    grid-row: 1/2;
-    justify-self: end;
+  h1, p {
+    grid-column: 2/3;
+    margin: 0;
   }
 
-  p {
-    grid-column: 2/3;
-    grid-row: 1/2;
-    justify-self: start;
+  h1 { grid-row: 2/3; }
+  p { grid-row: 1/2; }
+
+  @include media('>=sm') {
+    grid-template-columns:
+      minmax(2vw, 1fr)
+      minmax(160px, 240px)
+      minmax(160px, 720px)
+      minmax(2vw, 1fr);
+
+    h1 {
+      grid-column: 3/4;
+      grid-row: 1/2;
+      justify-self: end;
+    }
+
+    p {
+      grid-column: 2/3;
+      grid-row: 1/2;
+      justify-self: start;
+    }
   }
+
 }
 
 main,
@@ -173,5 +197,23 @@ a {
     background-color: $light;
     color: $dark;
     letter-spacing: 0.0625em;
+  }
+}
+
+
+
+footer {
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  li {
+    margin: 0 0 1rem 2rem;
+    text-indent: -2rem;
+  }
+
+  a {
+    word-break: break-all;
   }
 }
