@@ -11,6 +11,8 @@ $light: #E9E683;
 $light-alt: #C6D08D;
 
 $accent: #098389;
+$accent-dark: #086F74;
+
 $bold: #E9AB17;
 
 $white: #fff;
@@ -18,6 +20,9 @@ $black: #000;
 
 
 
+* {
+  box-sizing: border-box;
+}
 
 body {
   margin: 0;
@@ -107,6 +112,8 @@ a {
   }
 }
 
+
+
 .reactions {
   display: grid;
   grid-gap: 25px;
@@ -115,24 +122,56 @@ a {
   background-color: $accent;
 }
 
+
+
+.video-embed {
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-bottom: 75%;
+  background-color: $light-alt;
+  background-image: url("/cctp631/dist/images/gavel.jpg");
+  background-size: cover;
+  background-position: center;
+  background-blend-mode: multiply;
+}
+
 .play {
-  background-color: $bold;
-  color: #000;
+  cursor: pointer;
+  position: absolute;
+  top: calc( 50% - 40px -2rem );
+  padding: 2rem 3rem;
+  border: 5px solid $bold;
+  background-color: $accent;
+  color: $white;
   font: inherit;
-  font-size: 30px;
+  font-size: 40px;
   font-weight: 600;
 }
 
-.play, iframe {
-  width: 400px;
-  height: 300px;
+.video {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   border: 0;
 }
+
+
 
 .verdict {
   background-color: $accent;
 
   strong {
-    font-size: 32px;
+    padding: 0 0.25rem;
+    background-color: $light;
+    color: $dark;
+    letter-spacing: 0.0625em;
   }
 }
