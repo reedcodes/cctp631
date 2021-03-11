@@ -1,13 +1,126 @@
+@import './node_modules/@fortawesome/fontawesome-free/scss/fontawesome';
+@import './node_modules/@fortawesome/fontawesome-free/scss/brands';
+@import './node_modules/@fortawesome/fontawesome-free/scss/solid';
+@import './node_modules/@fortawesome/fontawesome-free/scss/regular';
+
+$fa-font-path: '../webfonts' !default;
+
+
+$dark: #1B2B38;
+$light: #E9E683;
+$light-alt: #C6D08D;
+
+$accent: #098389;
+$bold: #E9AB17;
+
+$white: #fff;
+$black: #000;
+
+
+
+
 body {
-  font-size: 20px;
-}
-
-dl div {
-  margin-bottom: 2rem;
-}
-
-dt, dd {
   margin: 0;
+  background-color: $dark;
+  color: $white;
+  font-size: 20px;
+  font-family: 'Oxygen', Helvetica, Arial, sans-serif;
+  line-height: 1.6;
+}
+
+header {
+  display: grid;
+  grid-template-columns:
+    minmax(2vw, 1fr)
+    minmax(160px, 480px)
+    minmax(160px, 480px)
+    minmax(2vw, 1fr);
+  align-items: center;
+  background-color: $accent;
+  border-bottom: 5px solid $bold;
+
+  h1 {
+    grid-column: 3/4;
+    grid-row: 1/2;
+    justify-self: end;
+  }
+
+  p {
+    grid-column: 2/3;
+    grid-row: 1/2;
+    justify-self: start;
+  }
+}
+
+main,
+footer {
+  display: grid;
+  grid-template-columns:
+    minmax( 2vw, 1fr )
+    minmax( 320px, 960px )
+    minmax( 2vw, 1fr );
+
+  > * {
+    grid-column: 2/3;
+  }
+}
+
+main {
+  h1 {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    line-height: 1.2;
+
+    [class*='fa-'] {
+      font-size: 75px;
+    }
+  }
+}
+
+a {
+  transition: all 0.3s ease;
+  border-bottom: 2px solid $light;
+  color: $light;
+  text-decoration: none;
+
+  &:hover,
+  &:focus,
+  &:active {
+    border-color: $light-alt;
+    color: $light-alt;
+  }
+
+  &:focus {
+    outline: 2px solid $accent;
+  }
+}
+
+.full {
+  grid-column: 1/-1;
+
+  > * {
+    max-width: 960px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+}
+
+.reactions {
+  display: grid;
+  grid-gap: 25px;
+  grid-template-columns: repeat( auto-fit, minmax( 250px, 1fr ) );
+  padding: 20px 2vw;
+  background-color: $accent;
+}
+
+.play {
+  background-color: $bold;
+  color: #000;
+  font: inherit;
+  font-size: 30px;
+  font-weight: 600;
 }
 
 .play, iframe {
@@ -16,6 +129,10 @@ dt, dd {
   border: 0;
 }
 
-.play {
-  font-size: inherit;
+.verdict {
+  background-color: $accent;
+
+  strong {
+    font-size: 32px;
+  }
 }
