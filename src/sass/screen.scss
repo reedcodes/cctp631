@@ -41,6 +41,13 @@ body {
   line-height: 1.6;
 }
 
+header,
+main,
+footer {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
 header {
   display: grid;
   grid-row-gap: 1rem;
@@ -48,7 +55,6 @@ header {
       minmax(2vw, 1fr)
       minmax(320px, 960px)
       minmax(2vw, 1fr);
-  align-items: center;
   background-color: $accent;
   border-bottom: 5px solid $bold;
 
@@ -98,10 +104,24 @@ h1 {
   grid-gap: 20px;
   grid-template-columns: auto 1fr;
   align-items: center;
+  font-size: 24px;
   line-height: 1.2;
+
+  @include media('>=sm') {
+    font-size: 36px;
+  }
 
   [class*='fa-'] {
     font-size: 75px;
+  }
+}
+
+h2 {
+  border-bottom: 2px solid $bold;
+  font-size: 22px;
+
+  @include media('>=sm') {
+    font-size: 28px;
   }
 }
 
@@ -127,6 +147,43 @@ img {
   max-width: 100%;
 }
 
+blockquote {
+  margin-left: 1rem;
+  padding-left: 1rem;
+  border-left: 2px solid $bold;
+}
+
+dt {
+  display: inline;
+  font-weight: 600;
+
+  &::after {
+    content: ':';
+  }
+}
+
+dd {
+  display: inline;
+  margin: 0;
+}
+
+
+
+.right {
+  float: right;
+  width: 25vw;
+  margin: 0.5rem 0 2rem 2rem;
+}
+
+.highlight {
+  padding: 0 0.25rem;
+  background-color: $light;
+  color: $dark;
+  letter-spacing: 0.0625em;
+}
+
+
+
 .full {
   grid-column: 1/-1;
   padding: 2rem 2vw;
@@ -138,7 +195,10 @@ img {
     margin-left: auto;
   }
 
-  img { display: block; }
+  img {
+    display: block;
+    max-width: 100%;
+  }
 }
 
 
@@ -193,12 +253,19 @@ img {
 
 
 
-.verdict {
-  strong {
-    padding: 0 0.25rem;
-    background-color: $light;
-    color: $dark;
-    letter-spacing: 0.0625em;
+.compare-fat {
+  display: grid;
+  grid-gap: 2rem;
+  grid-template-columns: repeat( auto-fit, minmax( 250px, 1fr ) );
+
+  figure {
+    margin: 0;
+  }
+
+  img {
+    object-fit: cover;
+    height: 250px;
+    margin-bottom: 1rem;
   }
 }
 
