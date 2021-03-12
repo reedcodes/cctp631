@@ -123,14 +123,22 @@ a {
   }
 }
 
+img {
+  max-width: 100%;
+}
+
 .full {
   grid-column: 1/-1;
+  padding: 2rem 2vw;
+  background-color: $accent;
 
   > * {
     max-width: 960px;
     margin-right: auto;
     margin-left: auto;
   }
+
+  img { display: block; }
 }
 
 
@@ -140,7 +148,6 @@ a {
   grid-gap: 25px;
   grid-template-columns: repeat( auto-fit, minmax( 250px, 1fr ) );
   padding: 20px 2vw;
-  background-color: $accent;
 }
 
 
@@ -187,8 +194,6 @@ a {
 
 
 .verdict {
-  background-color: $accent;
-
   strong {
     padding: 0 0.25rem;
     background-color: $light;
