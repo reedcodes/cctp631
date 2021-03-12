@@ -14,6 +14,7 @@ $breakpoints: (
 $fa-font-path: '../webfonts' !default;
 
 
+
 $dark: #1B2B38;
 $light: #E9E683;
 $light-alt: #C6D08D;
@@ -260,12 +261,17 @@ dd {
 
   figure {
     margin: 0;
+    padding: 2rem;
+    border: 2px solid $dark;
+    background: $light;
+    color: $dark;
   }
 
   img {
     object-fit: cover;
     height: 250px;
-    margin-bottom: 1rem;
+    margin: 0 auto 1rem auto;
+    border-radius: 0.5rem;
   }
 }
 
