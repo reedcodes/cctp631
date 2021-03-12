@@ -219,11 +219,21 @@ dd {
   }
 }
 
+.news {
+  display: grid;
+  grid-gap: 25px;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
 .reactions {
   display: grid;
   grid-gap: 25px;
   grid-template-columns: repeat( auto-fit, minmax( 250px, 1fr ) );
   padding: 20px $buffer;
+}
+
+.positive {
+  margin: 0;
 }
 
 
@@ -286,7 +296,7 @@ dd {
     object-fit: cover;
     height: 250px;
     margin: 0 auto 1rem auto;
-    border-radius: 0.5rem;
+    border-radius: 15px;
   }
 }
 
