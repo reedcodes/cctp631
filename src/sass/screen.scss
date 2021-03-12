@@ -14,6 +14,9 @@ $breakpoints: (
 $fa-font-path: '../webfonts' !default;
 
 
+$buffer: 5vw;
+
+
 
 $dark: #1B2B38;
 $light: #E9E683;
@@ -53,9 +56,9 @@ header {
   display: grid;
   grid-row-gap: 1rem;
   grid-template-columns:
-      minmax(2vw, 1fr)
+      minmax($buffer, 1fr)
       minmax(320px, 960px)
-      minmax(2vw, 1fr);
+      minmax($buffer, 1fr);
   background-color: $accent;
   border-bottom: 5px solid $bold;
 
@@ -69,10 +72,10 @@ header {
 
   @include media('>=sm') {
     grid-template-columns:
-      minmax(2vw, 1fr)
+      minmax($buffer, 1fr)
       minmax(160px, 720px)
       minmax(160px, 240px)
-      minmax(2vw, 1fr);
+      minmax($buffer, 1fr);
 
     h1 {
       grid-column: 2/3;
@@ -91,9 +94,9 @@ main,
 footer {
   display: grid;
   grid-template-columns:
-    minmax( 2vw, 1fr )
+    minmax( $buffer, 1fr )
     minmax( 320px, 960px )
-    minmax( 2vw, 1fr );
+    minmax( $buffer, 1fr );
 
   > * {
     grid-column: 2/3;
@@ -187,7 +190,7 @@ dd {
 
 .full {
   grid-column: 1/-1;
-  padding: 2rem 2vw;
+  padding: 2rem $buffer;
   background-color: $accent;
 
   > * {
@@ -204,11 +207,23 @@ dd {
 
 
 
+.twitter-tweet {
+  margin: 0 !important;
+
+  .positive & {
+    margin: 0;
+    padding: 0.5rem;
+    border-radius: 15px;
+    background-color: $bold;
+    color: $dark;
+  }
+}
+
 .reactions {
   display: grid;
   grid-gap: 25px;
   grid-template-columns: repeat( auto-fit, minmax( 250px, 1fr ) );
-  padding: 20px 2vw;
+  padding: 20px $buffer;
 }
 
 
