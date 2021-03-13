@@ -151,6 +151,21 @@ img {
   max-width: 100%;
 }
 
+figure {
+  margin: 0;
+  padding: 2rem;
+  border: 2px solid $dark;
+  border-radius: 15px;
+  background: $light;
+  color: $dark;
+
+  img {
+    object-fit: cover;
+    margin: 0 auto 1rem auto;
+    border-radius: 15px;
+  }
+}
+
 blockquote {
   margin-left: 1rem;
   padding-left: 1rem;
@@ -172,12 +187,6 @@ dd {
 }
 
 
-
-.right {
-  float: right;
-  width: 25vw;
-  margin: 0.5rem 0 2rem 2rem;
-}
 
 .highlight {
   padding: 0 0.25rem;
@@ -219,21 +228,15 @@ dd {
   }
 }
 
-.news {
-  display: grid;
-  grid-gap: 25px;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-}
-
+.news,
 .reactions {
   display: grid;
   grid-gap: 25px;
-  grid-template-columns: repeat( auto-fit, minmax( 250px, 1fr ) );
-  padding: 20px $buffer;
+  grid-template-columns: repeat( auto-fit, minmax( 300px, 1fr ) );
 }
 
-.positive {
-  margin: 0;
+.reactions {
+  padding: 20px $buffer;
 }
 
 
@@ -279,24 +282,25 @@ dd {
 
 
 
+.illustrate {
+  @include media('>=md') {
+    display: grid;
+    grid-gap: 25px;
+    grid-template-columns: 2fr 3fr;
+
+    img {
+      margin-bottom: 0;
+    }
+  }
+}
+
 .compare-fat {
   display: grid;
   grid-gap: 2rem;
-  grid-template-columns: repeat( auto-fit, minmax( 250px, 1fr ) );
-
-  figure {
-    margin: 0;
-    padding: 2rem;
-    border: 2px solid $dark;
-    background: $light;
-    color: $dark;
-  }
+  grid-template-columns: repeat( auto-fit, minmax( 300px, 1fr ) );
 
   img {
-    object-fit: cover;
     height: 250px;
-    margin: 0 auto 1rem auto;
-    border-radius: 15px;
   }
 }
 
