@@ -1,3 +1,7 @@
+@use 'color';
+@use 'size';
+@use 'type';
+
 $breakpoints: (
   xs: 500px,
   sm: 768px,
@@ -5,30 +9,6 @@ $breakpoints: (
   lg: 1200px ) !default;
 
 @import './node_modules/include-media/dist/include-media';
-
-@import './node_modules/@fortawesome/fontawesome-free/scss/fontawesome';
-@import './node_modules/@fortawesome/fontawesome-free/scss/brands';
-@import './node_modules/@fortawesome/fontawesome-free/scss/solid';
-@import './node_modules/@fortawesome/fontawesome-free/scss/regular';
-
-$fa-font-path: '../webfonts' !default;
-
-
-$buffer: 5vw;
-
-
-
-$dark: #1B2B38;
-$light: #E9E683;
-$light-alt: #C6D08D;
-
-$accent: #098389;
-$accent-dark: #086F74;
-
-$bold: #E9AB17;
-
-$white: #fff;
-$black: #000;
 
 
 
@@ -38,11 +18,11 @@ $black: #000;
 
 body {
   margin: 0;
-  background-color: $dark;
-  color: $white;
-  font-size: 20px;
-  font-family: 'Oxygen', Helvetica, Arial, sans-serif;
-  line-height: 1.6;
+  background-color: color.$dark;
+  color: color.$white;
+  font-size: type.$base;
+  line-height: type.$leading;
+  font-family: type.$fonts;
 }
 
 header,
@@ -56,11 +36,11 @@ header {
   display: grid;
   grid-row-gap: 1rem;
   grid-template-columns:
-      minmax($buffer, 1fr)
+      minmax(size.$buffer, 1fr)
       minmax(320px, 960px)
-      minmax($buffer, 1fr);
-  background-color: $accent;
-  border-bottom: 5px solid $bold;
+      minmax(size.$buffer, 1fr);
+  background-color: color.$accent;
+  border-bottom: 5px solid color.$bold;
 
   h1, p {
     grid-column: 2/3;
@@ -72,10 +52,10 @@ header {
 
   @include media('>=sm') {
     grid-template-columns:
-      minmax($buffer, 1fr)
+      minmax(size.$buffer, 1fr)
       minmax(160px, 720px)
       minmax(160px, 240px)
-      minmax($buffer, 1fr);
+      minmax(size.$buffer, 1fr);
 
     h1 {
       grid-column: 2/3;
@@ -94,9 +74,9 @@ main,
 footer {
   display: grid;
   grid-template-columns:
-    minmax( $buffer, 1fr )
+    minmax( size.$buffer, 1fr )
     minmax( 320px, 960px )
-    minmax( $buffer, 1fr );
+    minmax( size.$buffer, 1fr );
 
   > * {
     grid-column: 2/3;
@@ -121,7 +101,7 @@ h1 {
 }
 
 h2 {
-  border-bottom: 2px solid $bold;
+  border-bottom: 2px solid color.$bold;
   font-size: 22px;
 
   @include media('>=sm') {
@@ -131,19 +111,19 @@ h2 {
 
 a {
   transition: all 0.3s ease;
-  border-bottom: 2px solid $light;
-  color: $light;
+  border-bottom: 2px solid color.$light;
+  color: color.$light;
   text-decoration: none;
 
   &:hover,
   &:focus,
   &:active {
-    border-color: $light-alt;
-    color: $light-alt;
+    border-color: color.$light-alt;
+    color: color.$light-alt;
   }
 
   &:focus {
-    outline: 2px solid $accent;
+    outline: 2px solid color.$accent;
   }
 }
 
@@ -154,10 +134,10 @@ img {
 figure {
   margin: 0;
   padding: 2rem;
-  border: 2px solid $dark;
+  border: 2px solid color.$dark;
   border-radius: 15px;
-  background: $light;
-  color: $dark;
+  background: color.$light;
+  color: color.$dark;
 
   img {
     object-fit: cover;
@@ -169,7 +149,7 @@ figure {
 blockquote {
   margin-left: 1rem;
   padding-left: 1rem;
-  border-left: 2px solid $bold;
+  border-left: 2px solid color.$bold;
 }
 
 dt {
@@ -190,8 +170,8 @@ dd {
 
 .highlight {
   padding: 0 0.25rem;
-  background-color: $light;
-  color: $dark;
+  background-color: color.$light;
+  color: color.$dark;
   letter-spacing: 0.0625em;
 }
 
@@ -199,8 +179,8 @@ dd {
 
 .full {
   grid-column: 1/-1;
-  padding: 2rem $buffer;
-  background-color: $accent;
+  padding: 2rem size.$buffer;
+  background-color: color.$accent;
 
   > * {
     max-width: 960px;
@@ -223,8 +203,8 @@ dd {
     margin: 0;
     padding: 0.5rem;
     border-radius: 15px;
-    background-color: $bold;
-    color: $dark;
+    background-color: color.$bold;
+    color: color.$dark;
   }
 }
 
@@ -236,7 +216,7 @@ dd {
 }
 
 .reactions {
-  padding: 20px $buffer;
+  padding: 20px size.$buffer;
 }
 
 
@@ -249,7 +229,7 @@ dd {
   width: 100%;
   height: 0;
   padding-bottom: 75%;
-  background-color: $light-alt;
+  background-color: color.$light-alt;
   background-image: url("/cctp631/dist/images/gavel.jpg");
   background-size: cover;
   background-position: center;
@@ -261,9 +241,9 @@ dd {
   position: absolute;
   top: calc( 50% - 40px -2rem );
   padding: 2rem 3rem;
-  border: 5px solid $bold;
-  background-color: $accent;
-  color: $white;
+  border: 5px solid color.$bold;
+  background-color: color.$accent;
+  color: color.$white;
   font: inherit;
   font-size: 40px;
   font-weight: 600;

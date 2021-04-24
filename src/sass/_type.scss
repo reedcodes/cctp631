@@ -1,0 +1,11 @@
+@import './node_modules/@fortawesome/fontawesome-free/scss/fontawesome';
+@import './node_modules/@fortawesome/fontawesome-free/scss/brands';
+@import './node_modules/@fortawesome/fontawesome-free/scss/solid';
+@import './node_modules/@fortawesome/fontawesome-free/scss/regular';
+
+$fa-font-path: '../webfonts' !default;
+
+$fonts: 'Oxygen', Helvetica, Arial, sans-serif;
+
+$base: 20px;
+$leading: 1.6;
