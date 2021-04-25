@@ -11,7 +11,7 @@ $backgroundColor: color.$dark;
 $mainColor: color.$white;
 $headingColor: color.$white;
 
-$mainFontSize: 42px;
+$mainFontSize: inherit;
 $mainFont: type.$fonts;
 $headingFont: type.$fonts;
 $headingTextShadow: none;
@@ -22,10 +22,10 @@ $linkColor: color.$light;
 $linkColorHover: color.$light-alt;
 $selectionBackgroundColor: color.$light-alt;
 
-$heading1Size: 2.5em;
-$heading2Size: 1.6em;
-$heading3Size: 1.3em;
-$heading4Size: 1.0em;
+$heading1Size: 2.45em;
+$heading2Size: 2.075em;
+$heading3Size: 1.725em;
+$heading4Size: 1.45em;
 
 // Change text colors against light slide backgrounds
 @include light-bg-text-color( color.$dark );

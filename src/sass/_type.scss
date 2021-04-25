@@ -1,11 +1,39 @@
-@import './node_modules/@fortawesome/fontawesome-free/scss/fontawesome';
-@import './node_modules/@fortawesome/fontawesome-free/scss/brands';
-@import './node_modules/@fortawesome/fontawesome-free/scss/solid';
-@import './node_modules/@fortawesome/fontawesome-free/scss/regular';
-
-$fa-font-path: '../webfonts' !default;
+@use 'media';
 
 $fonts: 'Oxygen', Helvetica, Arial, sans-serif;
 
 $base: 20px;
 $leading: 1.6;
+
+
+
+body {
+  font-size: $base;
+  line-height: $leading;
+  font-family: $fonts;
+}
+
+h1 {
+  font-size: 1.8rem; line-height: 1.2;
+  @include media.media('>=sm') { font-size: 2.45rem; }
+}
+
+h2 {
+  font-size: 1.6rem;
+  @include media.media('>=sm') { font-size: 2.075rem; }
+}
+
+h3 {
+  font-size: 1.425rem;
+  @include media.media('>=sm') { font-size: 1.725rem; }
+}
+
+h4 {
+  font-size: 1.25rem;
+  @include media.media('>=sm') { font-size: 1.45rem; }
+}
+
+h5 {
+  font-size: 1.125rem;
+  @include media.media('>=sm') { font-size: 1.2rem; }
+}

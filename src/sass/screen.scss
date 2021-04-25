@@ -1,14 +1,8 @@
 @use 'color';
 @use 'size';
+@use 'media';
+@use 'fa';
 @use 'type';
-
-$breakpoints: (
-  xs: 500px,
-  sm: 768px,
-  md: 1024px,
-  lg: 1200px ) !default;
-
-@import './node_modules/include-media/dist/include-media';
 
 
 
@@ -20,9 +14,6 @@ body {
   margin: 0;
   background-color: color.$dark;
   color: color.$white;
-  font-size: type.$base;
-  line-height: type.$leading;
-  font-family: type.$fonts;
 }
 
 header,
@@ -50,7 +41,7 @@ header {
   h1 { grid-row: 2/3; }
   p { grid-row: 1/2; }
 
-  @include media('>=sm') {
+  @include media.media('>=sm') {
     grid-template-columns:
       minmax(size.$buffer, 1fr)
       minmax(160px, 720px)
@@ -88,12 +79,6 @@ h1 {
   grid-gap: 20px;
   grid-template-columns: auto 1fr;
   align-items: center;
-  font-size: 24px;
-  line-height: 1.2;
-
-  @include media('>=sm') {
-    font-size: 36px;
-  }
 
   [class*='fa-'] {
     font-size: 75px;
@@ -102,11 +87,6 @@ h1 {
 
 h2 {
   border-bottom: 2px solid color.$bold;
-  font-size: 22px;
-
-  @include media('>=sm') {
-    font-size: 28px;
-  }
 }
 
 a {
@@ -263,7 +243,7 @@ dd {
 
 
 .illustrate {
-  @include media('>=md') {
+  @include media.media('>=md') {
     display: grid;
     grid-gap: 25px;
     grid-template-columns: 2fr 3fr;
