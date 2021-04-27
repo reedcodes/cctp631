@@ -1,0 +1,62 @@
+@use 'color';
+@use 'type';
+
+// Customizations to reveal.js stylesheets.
+
+@import './node_modules/reveal.js/css/theme/template/mixins';
+@import './node_modules/reveal.js/css/theme/template/settings';
+
+$backgroundColor: color.$dark;
+
+$mainColor: color.$white;
+$headingColor: color.$white;
+
+$mainFontSize: inherit;
+$mainFont: type.$fonts;
+$headingFont: type.$fonts;
+$headingTextShadow: none;
+$headingLetterSpacing: normal;
+$headingTextTransform: none;
+$headingFontWeight: 600;
+$linkColor: color.$light;
+$linkColorHover: color.$light-alt;
+$selectionBackgroundColor: color.$light-alt;
+
+$heading1Size: 2.45rem;
+$heading2Size: 2.075rem;
+$heading3Size: 1.725rem;
+$heading4Size: 1.45rem;
+
+// Change text colors against light slide backgrounds
+@include light-bg-text-color( color.$dark );
+
+
+@import './node_modules/reveal.js/css/theme/template/theme';
+
+
+
+// Additional customizations or overrides.
+
+header {
+  position: absolute;
+  width: 100vw;
+  max-width: 100%;
+  color: color.$white;
+  line-height: type.$leading;
+}
+
+.reveal {
+  h2,
+  p {
+    line-height: type.$leading;
+  }
+
+  .slides {
+    text-align: left;
+
+    section {
+      padding-top: 100px;
+      line-height: type.$leading;
+    }
+  }
+}
