@@ -16,16 +16,16 @@ $mainFont: type.$fonts;
 $headingFont: type.$fonts;
 $headingTextShadow: none;
 $headingLetterSpacing: normal;
-$headingTextTransform: uppercase;
+$headingTextTransform: none;
 $headingFontWeight: 600;
 $linkColor: color.$light;
 $linkColorHover: color.$light-alt;
 $selectionBackgroundColor: color.$light-alt;
 
-$heading1Size: 2.45em;
-$heading2Size: 2.075em;
-$heading3Size: 1.725em;
-$heading4Size: 1.45em;
+$heading1Size: 2.45rem;
+$heading2Size: 2.075rem;
+$heading3Size: 1.725rem;
+$heading4Size: 1.45rem;
 
 // Change text colors against light slide backgrounds
 @include light-bg-text-color( color.$dark );
@@ -43,4 +43,19 @@ header {
   max-width: 100%;
   color: color.$white;
   line-height: type.$leading;
+}
+
+.reveal {
+  h2,
+  p {
+    line-height: type.$leading;
+  }
+
+  .slides {
+    text-align: left;
+
+    section {
+      padding-top: 100px;
+    }
+  }
 }

@@ -28,20 +28,119 @@
         </header>
         <div class="reveal">
             <div class="slides">
-                <section>
-                     <h1>Slide 1</h1>
+                <section id="healthy">
+                     <h1>
+          <span class="fa-fw fas fa-heartbeat" aria-hidden="true"></span>
+          <span>People can be healthy at any size, regardless of weight &#8212; yes, even if they are fat!</span>
+        </h1>
 
                 </section>
-                <section>
-                     <h1>Slide 2</h1>
+                <section aria-labelledby="healthy">
+                    <p>some HAES info</p>
+                </section>
+                <section id="misperception">
+                     <h1>
+          <span class="fa-fw fas fa-flag-usa" aria-hidden="true"></span>
+          <span>The United States experiencing an "obesity epidemic" is a common misperception</span>
+        </h1>
 
+                </section>
+                <section aria-labelledby="misperception">
+                    <p>debunk the obesity epidemic</p>
+                </section>
+                <section id="obesity-epidemic">
+                     <h1>
+          <span class="fa-fw fas fa-user-slash" aria-hidden="true"></span>
+          <span>The "obesity epidemic" fuels the myth that fat is unhealthy and must be eradicated</span>
+        </h1>
+
+                </section>
+                <section aria-labelledby="obesity-epidemic">
+                    <p>discuss fat != unhealthy</p>
+                </section>
+                <section id="medical">
+                     <h1>
+          <span class="fa-fw fas fa-user-md" aria-hidden="true"></span>
+          <span>It perpetuates harmful stereotypes that lead to medical mistreatment</span>
+        </h1>
+
+                </section>
+                <section aria-labelledby="medical">
+                    <p>discuss medical stigma, neglect, lack of attention, and disregard</p>
+                </section>
+                <section id="weightloss">
+                     <h1>
+          <span class="fa-fw fas fa-weight" aria-hidden="true"></span>
+          <span>It encourages weigh-loss behaviors that are detrimental to physical and mental health</span>
+        </h1>
+
+                </section>
+                <section aria-labelledby="weightloss">
+                    <p>discuss what disordered eating does to the body and mind</p>
+                </section>
+                <section id="prejudice">
+                     <h1>
+          <span class="fa-fw fas fa-users" aria-hidden="true"></span>
+          <span>It reinforces existing social and systemic prejudices against fat people</span>
+        </h1>
+
+                </section>
+                <section aria-labelledby="prejudice">
+                    <p>discuss what disordered eating does to the body and mind</p>
+                </section>
+                <section id="healthy-behaviors">
+                     <h1>
+          <span class="fa-fw fas fa-swimmer" aria-hidden="true"></span>
+          <span>Encouraging healthy behaviors has more positive affect on health than weight-loss</span>
+        </h1>
+
+                </section>
+                <section aria-labelledby="healthy-behaviors">
+                    <p>"Fat Is Not the Problem &#8212; Fat Stigma Is" (Bacon and Severson), reiterate
+                        that HAES is possible</p>
+                </section>
+                <section>
+                     <h1>
+          <span class="fa-fw fas fa-clipboard" aria-hidden="true"></span>
+          <span>Addendum</span>
+        </h1>
+
+                    <p>This is a static website, generated using several node.js packages, including
+                        light templating with <a href="https://www.npmjs.com/package/gulp-html-partial">gulp-html-partial</a>,
+                        and writing and compiling CSS using <a href="https://www.npmjs.com/package/gulp-dart-sass">Dart Sass</a>.
+                        For quick turnaround within the scope of this project, design is simple,
+                        yet still responsive. Fonts are courtesy <a href="https://fontawesome.com/">FontAwesome</a>.</p>
+                    <p>The code for this website is available <a href="https://github.com/reedcodes/cctp631">in a Github repository</a>.
+                        If you find an issue or bug, <a href="https://github.com/reedcodes/cctp631/issues">please open a ticket</a>.</p>
+                    <p><a href="/cctp631/impact/justification.html">A full justification for this presentation is available.</a>
+                    </p>
+                </section>
+                <section>
+                     <h1>
+          <span class="fa-fw fas fa-book" aria-hidden="true"></span>
+          <span>References</span>
+        </h1>
+
+                    <p>This topic was influenced by the work of <a href="https://lindobacon.com/">Lindo Bacon</a>,
+                        <a
+                        href="https://www.yourfatfriend.com/">Aubrey Gordon</a>, <a href="https://www.fatnutritionist.com/">Michelle Allison</a>,
+                            and many in the Health at Every Size and fat acceptance movements.</p>
+                    <p>A full list of <a href="/cctp631/impact/citations.html">Works Cited</a> is
+                        also available.</p>
                 </section>
             </div>
         </div>
         <script src="/cctp631/dist/js/scripts.min.js"></script>
         <script src="/cctp631/dist/js/reveal.min.js"></script>
         <script>
-            Reveal.initialize();
+            Reveal.initialize(
+                {
+                  hash: true,
+                  hashOneBasedIndex: true,
+                  minScale: 0.5,
+                  maxScale: 1.0
+                }
+              );
         </script>
     </body>
 
