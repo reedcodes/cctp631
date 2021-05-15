@@ -118,6 +118,8 @@ img {
   max-width: 100%;
 }
 
+
+
 figure {
   margin: 0;
   padding: 2rem;
@@ -131,7 +133,20 @@ figure {
     margin: 0 auto 1rem auto;
     border-radius: 15px;
   }
+
+  &.hero {
+    padding: 0;
+    background: none;
+    color: inherit;
+    font-size: 1rem;
+
+    img {
+      margin-bottom: 0;
+    }
+  }
 }
+
+
 
 blockquote {
   margin-left: 1rem;
@@ -261,7 +276,7 @@ dd {
   }
 }
 
-.compare-fat {
+.compare {
   display: grid;
   grid-gap: 2rem;
   grid-template-columns: repeat( auto-fit, minmax( 300px, 1fr ) );
