@@ -6,6 +6,19 @@
 
 
 
+.visually-hidden {
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(100%);
+  position: absolute;
+  overflow: hidden;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  border: 0;
+}
+
+
+
 * {
   box-sizing: border-box;
 }
@@ -132,17 +145,6 @@ figure {
     object-fit: cover;
     margin: 0 auto 1rem auto;
     border-radius: 15px;
-  }
-
-  &.hero {
-    padding: 0;
-    background: none;
-    color: inherit;
-    font-size: 1rem;
-
-    img {
-      margin-bottom: 0;
-    }
   }
 }
 
@@ -285,6 +287,21 @@ dd {
     height: 250px;
   }
 }
+
+.hero {
+  padding: 0;
+  background: none;
+  color: inherit;
+  font-size: 1rem;
+
+  img {
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 0;
+  }
+}
+
+img[src*="sift"] { background: color.$white; }
 
 
 
